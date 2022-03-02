@@ -1,0 +1,3 @@
+INSERT INTO DINING_REVIEW (id,user_name,restaurant_id,peanut_allergy,egg_allergy,dairy_allergy,commentary,admin_review_action) VALUES (1,'Ken11',1,2,1,5,'Nice salads but the staff was rude.','PENDING');
+INSERT INTO USERS (id, user_name, city, state, zipcode, has_peanut_allergy, has_egg_allergy, has_dairy_allergy) VALUES (1,'Ken11','Utrecht','Utrecht','3523DB',false,true,false);
+INSERT INTO RESTAURANT (id, name, zipcode, keyword) VALUES (1, "Bombom Monkey", "3582AV", "South-eastern Asian cuisine");
