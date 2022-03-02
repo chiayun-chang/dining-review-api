@@ -40,12 +40,14 @@ public class RestaurantController {
     @GetMapping("/restaurant/search")
     public Iterable<Restaurant> searchRestaurants(@RequestParam(name="zipcode", required = false) String zipcode,
                                                   @RequestParam(name="keyword", required = false) String keyword,
-                                                  @RequestParam(name="maxPeanutAllergy", required = false) Float peanutAllergy,
-                                                  @RequestParam(name="maxEggAllergy", required = false) Float eggAllergy,
-                                                  @RequestParam(name="maxDairyAllergy", required = false) Float dairyAllergy) {
+                                                  @RequestParam(name="maxPeanutAllergy") Float peanutAllergy,
+                                                  @RequestParam(name="maxEggAllergy") Float eggAllergy,
+                                                  @RequestParam(name="maxDairyAllergy") Float dairyAllergy) {
         if(zipcode != null && keyword != null) {
+            // find restaurants by zipcode and keyword and update the Restaurant objects
             return restaurantRepository.findByZipcodeAndKeyword(zipcode, keyword);
         }
+        // sort restaurants by allergy scores
         return new ArrayList<>();
     }
 }
