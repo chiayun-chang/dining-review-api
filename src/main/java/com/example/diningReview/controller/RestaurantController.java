@@ -47,7 +47,9 @@ public class RestaurantController {
             // find restaurants by zipcode and keyword and update the Restaurant objects
             return restaurantRepository.findByZipcodeAndKeyword(zipcode, keyword);
         }
-        // sort restaurants by allergy scores
+        // TODO: sort restaurants by allergy scores
+        // 1) calculate allergy scores
+        // 2) get or sort restaurants by allergy scores
         return new ArrayList<>();
     }
 }
